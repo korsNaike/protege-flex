@@ -608,7 +608,6 @@
     <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал1">
         <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
-        <building-2:датаПоступления rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-15</building-2:датаПоступления>
         <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">555.11</building-2:объемМатериала>
         <building-2:типМатериала>Весовой</building-2:типМатериала>
         <rdfs:label>Бетон М300</rdfs:label>
@@ -623,7 +622,6 @@
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота4"/>
-        <building-2:датаПоступления rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-28</building-2:датаПоступления>
         <building-2:названиеМатериала>Арматура</building-2:названиеМатериала>
         <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</building-2:объемМатериала>
         <building-2:статусМатериала>Есть запас</building-2:статусМатериала>
@@ -649,7 +647,6 @@
     <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал4">
         <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
-        <building-2:датаПоступления rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-02</building-2:датаПоступления>
         <building-2:названиеМатериала>Песок строительный</building-2:названиеМатериала>
         <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">555.0</building-2:объемМатериала>
         <building-2:типМатериала>Весовой</building-2:типМатериала>
@@ -663,9 +660,8 @@
     <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал5">
         <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
         <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота3"/>
-        <building-2:датаПоступления rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-01</building-2:датаПоступления>
         <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</building-2:объемМатериала>
-        <building-2:типОборудования>Поштучный</building-2:типОборудования>
+        <building-2:статусМатериала>Поставляется</building-2:статусМатериала>
         <rdfs:label>Стеклопакеты</rdfs:label>
     </owl:NamedIndividual>
     
