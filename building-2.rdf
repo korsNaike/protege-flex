@@ -192,6 +192,7 @@
     <!-- file:/home/korsnaike/studying/protege/building-2.rdf#работаетНадПроектом -->
 
     <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#работаетНадПроектом">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
         <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
     </owl:ObjectProperty>
