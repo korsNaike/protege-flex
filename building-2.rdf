@@ -597,7 +597,7 @@
         <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
         <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5"/>
         <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100551.51</building-2:суммаЗатраты>
-        <building-2:типЗатраты>Амортизация</building-2:типЗатраты>
+        <building-2:типЗатраты>Оборудование</building-2:типЗатраты>
         <rdfs:label>Ремонт оборудования</rdfs:label>
     </owl:NamedIndividual>
     
