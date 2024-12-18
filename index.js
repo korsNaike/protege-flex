@@ -52,11 +52,24 @@ const queries = {
 
 async function runQuery(queryKey) {
   const query = queries[queryKey];
+  await executeQuery(query);
+}
+
+async function runCustomQuery() {
+  const query = document.getElementById("customQueryInput").value;
+  if (!query.trim()) {
+    alert("Please enter a valid SPARQL query.");
+    return;
+  }
+  await executeQuery(query);
+}
+
+async function executeQuery(query) {
   const loadingElement = document.getElementById("loading");
   const resultsElement = document.getElementById("results");
 
   loadingElement.style.display = "block"; // Показываем индикатор загрузки
-  resultsElement.innerHTML = ""; // Очищаем результаты перед новым запросом
+  resultsElement.innerHTML = ""; // Очищаем предыдущие результаты
 
   try {
     const response = await fetch(endpoint, {
@@ -109,4 +122,3 @@ function displayResults(bindings) {
 
   resultsElement.innerHTML = tableHTML;
 }
-

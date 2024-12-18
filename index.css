@@ -10,7 +10,7 @@ body {
   padding: 20px;
 }
 
-h1 {
+h1, h2 {
   margin-top: 20px;
   color: #333;
 }
@@ -37,6 +37,20 @@ button:hover {
   background-color: #0056b3;
 }
 
+textarea {
+  width: 80%;
+  height: 150px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-query {
+  margin: 20px 0;
+}
+
 #results {
   margin-top: 20px;
 }
@@ -57,4 +71,3 @@ table td {
 table th {
   background-color: #f2f2f2;
 }
-
