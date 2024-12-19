@@ -8,22 +8,22 @@
 </head>
 <body>
   <div class="app">
-    <h1>Ontology Query Interface</h1>
-
-    <!-- Предустановленные запросы -->
-    <div class="query-buttons">
-      <button onclick="runQuery('projectsInProgress')">Get Projects In Progress</button>
-      <button onclick="runQuery('specialistsAndRoles')">Get Specialists and Roles</button>
-      <button onclick="runQuery('devicesAssignedToProjects')">Get Devices Assigned to Projects</button>
-      <button onclick="runQuery('pendingRequirements')">Get Pending Requirements</button>
-      <button onclick="runQuery('technologies')">Get Technologies</button>
-    </div>
+    <h1>GUI для взаимодействия с онтологией строительства</h1>
 
     <!-- Поле для пользовательских запросов -->
     <div class="custom-query">
-      <h2>Custom SPARQL Query</h2>
-      <textarea id="customQueryInput" rows="10" placeholder="Write your SPARQL query here..."></textarea>
-      <button onclick="runCustomQuery()">Run Custom Query</button>
+      <h2>Ввод собственного запроса</h2>
+      <textarea id="customQueryInput" rows="10" placeholder="Ваш запрос"></textarea>
+      <button onclick="runCustomQuery()">Запуск</button>
+    </div>
+
+    <!-- Предустановленные запросы -->
+    <div class="query-buttons">
+      <button onclick="runQuery('maxMinProjects')">Проекты с их минимальной и максимальной стоимостью</button>
+      <button onclick="runQuery('equipmentInProjects')">Получить оборудования, используемые в проекта (CONSTRUCT)</button>
+      <button onclick="runQuery('sumForProject')">Суммарные затраты по проекту</button>
+      <button onclick="runQuery('employeeInProjects')">Сотрудники в проектах</button>
+      <button onclick="runQuery('projectsDates')">Работы, даты и затраты</button>
     </div>
 
     <!-- Индикатор загрузки -->

@@ -1,58 +1,86 @@
 const endpoint = "http://localhost:3030/lab/sparql"; // Адрес вашего SPARQL-эндпоинта
 
 const queries = {
-  projectsInProgress: `
-    PREFIX : <http://example.org/>
-    SELECT ?projectName ?status
-    WHERE {
-      ?project a :Project ;
-               :hasName ?projectName ;
-               :hasStatus "In Progress" .
-    }
+  maxMinProjects: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+SELECT ?проект (MIN(?стоимость) AS ?минимальнаяЗатрата) (MAX(?стоимость) AS ?максимальнаяЗатрата)
+WHERE {
+  ?проект rdf:type ont:Проект .
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+  ?затрата ont:суммаЗатраты ?стоимость .
+}
+GROUP BY ?проект
   `,
-  specialistsAndRoles: `
-    PREFIX : <http://example.org/>
-    SELECT ?specialistName ?role
-    WHERE {
-      ?specialist a :Specialist ;
-                  :hasSpecialistName ?specialistName ;
-                  :hasRole ?role .
-    }
+  equipmentInProjects: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+CONSTRUCT {
+    ?оборудование ont:применяетсяВРаботе ?работа .
+    ?работа ont:входитВПроект ?проект
+}
+WHERE {
+    ?оборудование ont:применяетсяВРаботе ?работа .
+    ?работа ont:входитВПроект ?проект
+}
   `,
-  devicesAssignedToProjects: `
-    PREFIX : <http://example.org/>
-    SELECT ?deviceName ?deviceType ?projectName
-    WHERE {
-      ?device a :Device ;
-              :hasDeviceName ?deviceName ;
-              :hasDeviceType ?deviceType ;
-              :assignedToProject ?project .
-      ?project :hasName ?projectName .
-    }
+  sumForProject: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+SELECT ?проект (SUM(?стоимость) AS ?суммарныеЗатраты)
+WHERE {
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+  ?затрата ont:суммаЗатраты ?стоимость .
+}
+GROUP BY ?проект
   `,
-  pendingRequirements: `
-    PREFIX : <http://example.org/>
-    SELECT ?requirementDescription ?status
-    WHERE {
-      ?requirement a :Requirement ;
-                   :hasRequirementDescription ?requirementDescription ;
-                   :hasRequirementStatus "Pending" .
-    }
+  employeeInProjects: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?сотрудник ?проект
+WHERE {
+  ?проект ont:имеетИнженера ?сотрудник .
+}
   `,
-  technologies: `
-    PREFIX : <http://example.org/>
-    SELECT ?technologyName ?technologyID
-    WHERE {
-      ?technology a :Technology ;
-                  :hasTechnologyName ?technologyName ;
-                  :hasTechnologyID ?technologyID .
-    }
+  projectsDates: `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?проект ?датаНачала ?работа ?затрата
+WHERE {
+  ?проект ont:датаНачалаПроекта ?датаНачала .
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+}
   `,
 };
 
 async function runQuery(queryKey) {
   const query = queries[queryKey];
-  await executeQuery(query);
+  if (query.includes("CONSTRUCT")) {
+    await executeXMLQuery(query)
+  } else {
+    await executeQuery(query, queryKey);
+  }
 }
 
 async function runCustomQuery() {
@@ -119,6 +147,80 @@ function displayResults(bindings) {
   });
 
   tableHTML += "</tbody></table>";
+  tableHTML = tableHTML.replaceAll("file:/home/korsnaike/studying/protege/building-2.rdf#", "")
+
+  resultsElement.innerHTML = tableHTML;
+}
+
+async function executeXMLQuery(query) {
+  const loadingElement = document.getElementById("loading");
+  const resultsElement = document.getElementById("results");
+
+  loadingElement.style.display = "block"; // Показываем индикатор загрузки
+  resultsElement.innerHTML = ""; // Очищаем предыдущие результаты
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/sparql-query",
+        "Accept": "application/rdf+xml",
+      },
+      body: query,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const responseText = await response.text();
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(responseText, "application/xml");
+
+    const triples = parseRDFXML(xmlDoc);
+    displayXMLResults(triples);
+  } catch (error) {
+    resultsElement.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+  } finally {
+    loadingElement.style.display = "none"; // Скрываем индикатор загрузки
+  }
+}
+
+function parseRDFXML(xmlDoc) {
+  const triples = [];
+  const descriptions = xmlDoc.getElementsByTagName("rdf:Description");
+
+  for (let desc of descriptions) {
+    const subject = desc.getAttribute("rdf:about");
+    const predicates = desc.children;
+
+    for (let predicate of predicates) {
+      const predicateName = predicate.tagName.split(":").pop();
+      const object = predicate.getAttribute("rdf:resource") || predicate.textContent.trim();
+
+      triples.push({ subject, predicate: predicateName, object });
+    }
+  }
+
+  return triples;
+}
+
+function displayXMLResults(triples) {
+  const resultsElement = document.getElementById("results");
+
+  if (triples.length === 0) {
+    resultsElement.innerHTML = "<p>No results found.</p>";
+    return;
+  }
+
+  let tableHTML = "<table><thead><tr><th>Subject</th><th>Predicate</th><th>Object</th></tr></thead><tbody>";
+
+  triples.forEach((triple) => {
+    tableHTML += `<tr><td>${triple.subject}</td><td>${triple.predicate}</td><td>${triple.object}</td></tr>`;
+  });
+
+  tableHTML += "</tbody></table>";
+  tableHTML = tableHTML.replaceAll("file:/home/korsnaike/studying/protege/building-2.rdf#", "")
 
   resultsElement.innerHTML = tableHTML;
 }

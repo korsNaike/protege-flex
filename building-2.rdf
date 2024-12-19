@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/ConstructionOntology#"
+     xml:base="http://example.com/ConstructionOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:example="http://example.com/"
+     xmlns:building-2="file:/home/korsnaike/studying/protege/building-2.rdf#">
+    <owl:Ontology rdf:about="http://example.com/ConstructionOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/ФИО -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/ФИО"/>
+    
+
+
+    <!-- http://example.com/датаЗавершенияПроекта -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/датаЗавершенияПроекта"/>
+    
+
+
+    <!-- http://example.com/датаНачалаПроекта -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/датаНачалаПроекта"/>
+    
+
+
+    <!-- http://example.com/датаУстройства -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/датаУстройства"/>
+    
+
+
+    <!-- http://example.com/должность -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/должность"/>
+    
+
+
+    <!-- http://example.com/зарплата -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/зарплата"/>
+    
+
+
+    <!-- http://example.com/названиеПроекта -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/названиеПроекта"/>
+    
+
+
+    <!-- http://example.com/номерТелефона -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/номерТелефона"/>
+    
+
+
+    <!-- http://example.com/описаниеПроекта -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/описаниеПроекта"/>
+    
+
+
+    <!-- http://example.com/стаж -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/стаж"/>
+    
+
+
+    <!-- http://example.com/статусПроекта -->
+
+    <owl:AnnotationProperty rdf:about="http://example.com/статусПроекта"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#входитВПроект -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#входитВПроект">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#имеетАрхитектора -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#имеетАрхитектора">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#имеетИнженера -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#имеетИнженера">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#имеетОтветственного -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#имеетОтветственного">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#используетсяВРаботе -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#используетсяВРаботе">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#ответственныйЗаОборудование -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#ответственныйЗаОборудование">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#относятсяКПроекту -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#относятсяКПроекту">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#применяетсяВРаботе -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#применяетсяВРаботе">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#работаетНадПроектом -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#работаетНадПроектом">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#связаныСРаботой -->
+
+    <owl:ObjectProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#связаныСРаботой">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#ФИО -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#ФИО">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаЗавершенияПроекта -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаЗавершенияПроекта">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаЗавершенияРаботы -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаЗавершенияРаботы">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаНачалаПроекта -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаНачалаПроекта">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаНачалаРаботы -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаНачалаРаботы">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаПлатежа -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаПлатежа">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаПоступления -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаПоступления">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#датаУстройства -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#датаУстройства">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#должность -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#должность">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#зарплата -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#зарплата">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#количествоОборудования -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#количествоОборудования">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#названиеМатериала -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#названиеМатериала">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#названиеОборудования -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#названиеОборудования">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#названиеПроекта -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#названиеПроекта">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#номерТелефона -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#номерТелефона">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#объемМатериала -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#объемМатериала">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#описаниеПроекта -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#описаниеПроекта">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#описаниеРаботы -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#описаниеРаботы">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#стаж -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#стаж">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#статусЗатраты -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#статусЗатраты">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#статусМатериала -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#статусМатериала">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#статусОборудования -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#статусОборудования">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#статусПроекта -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#статусПроекта">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#статусРаботы -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#статусРаботы">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#суммаЗатраты -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#суммаЗатраты">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#типЗатраты -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#типЗатраты">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#типМатериала -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#типМатериала">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#типОборудования -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#типОборудования">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#типРаботы -->
+
+    <owl:DatatypeProperty rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#типРаботы">
+        <rdfs:domain rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота -->
+
+    <owl:Class rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <building-2:относятсяКПроекту rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
+        <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22112.42</building-2:суммаЗатраты>
+        <building-2:типЗатраты>Материалы</building-2:типЗатраты>
+        <rdfs:label>Закупка арматуры</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.12</building-2:суммаЗатраты>
+        <building-2:типЗатраты>Транспорт</building-2:типЗатраты>
+        <rdfs:label>Аренда экскаватора</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота3"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота4"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5"/>
+        <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">500000.12</building-2:суммаЗатраты>
+        <building-2:типЗатраты>Заработная плата</building-2:типЗатраты>
+        <rdfs:label>Оплата труда</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <building-2:относятсяКПроекту rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект2"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5"/>
+        <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5712.51</building-2:суммаЗатраты>
+        <building-2:типЗатраты>Материалы</building-2:типЗатраты>
+        <rdfs:label>Закупка стеклопакетов</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Затрата5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Затрата"/>
+        <building-2:связаныСРаботой rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5"/>
+        <building-2:суммаЗатраты rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100551.51</building-2:суммаЗатраты>
+        <building-2:типЗатраты>Оборудование</building-2:типЗатраты>
+        <rdfs:label>Ремонт оборудования</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">555.11</building-2:объемМатериала>
+        <building-2:типМатериала>Весовой</building-2:типМатериала>
+        <rdfs:label>Бетон М300</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота4"/>
+        <building-2:названиеМатериала>Арматура</building-2:названиеМатериала>
+        <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</building-2:объемМатериала>
+        <building-2:статусМатериала>Есть запас</building-2:статусМатериала>
+        <building-2:типМатериала>Поштучный</building-2:типМатериала>
+        <rdfs:label>Арматура А500</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
+        <building-2:типМатериала>Поштучный</building-2:типМатериала>
+        <rdfs:label>Кирпич облицовочный</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:названиеМатериала>Песок строительный</building-2:названиеМатериала>
+        <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">555.0</building-2:объемМатериала>
+        <building-2:типМатериала>Весовой</building-2:типМатериала>
+        <rdfs:label>Песок строительный</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Материал5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Материал5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Материал"/>
+        <building-2:используетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота3"/>
+        <building-2:объемМатериала rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</building-2:объемМатериала>
+        <building-2:статусМатериала>Поставляется</building-2:статусМатериала>
+        <rdfs:label>Стеклопакеты</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <building-2:ответственныйЗаОборудование rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник3"/>
+        <building-2:применяетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:названиеОборудования>Эксакаватор</building-2:названиеОборудования>
+        <building-2:типОборудования>Крупный</building-2:типОборудования>
+        <rdfs:label>Экскаватор</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <building-2:ответственныйЗаОборудование rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник1"/>
+        <building-2:применяетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:названиеОборудования>Бетономешалка</building-2:названиеОборудования>
+        <building-2:типОборудования>Крупное</building-2:типОборудования>
+        <rdfs:label>Бетономешалка</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <building-2:ответственныйЗаОборудование rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник2"/>
+        <building-2:применяетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1"/>
+        <building-2:названиеОборудования>Кран башенный</building-2:названиеОборудования>
+        <building-2:типОборудования>Крупный</building-2:типОборудования>
+        <rdfs:label>Кран башенный</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <building-2:ответственныйЗаОборудование rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник4"/>
+        <building-2:применяетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5"/>
+        <building-2:названиеОборудования>Перфоратор</building-2:названиеОборудования>
+        <building-2:типОборудования>Средний</building-2:типОборудования>
+        <rdfs:label>Перфоратор</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Оборудование"/>
+        <building-2:ответственныйЗаОборудование rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник3"/>
+        <building-2:применяетсяВРаботе rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2"/>
+        <building-2:названиеОборудования>Сварочный аппарт</building-2:названиеОборудования>
+        <building-2:типОборудования>Средний</building-2:типОборудования>
+        <rdfs:label>Сварочный аппарат</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <building-2:имеетАрхитектора rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник1"/>
+        <building-2:имеетИнженера rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник2"/>
+        <building-2:датаЗавершенияПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</building-2:датаЗавершенияПроекта>
+        <building-2:датаНачалаПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-01</building-2:датаНачалаПроекта>
+        <building-2:названиеПроекта>Жилой комплекс &quot;Северный&quot;</building-2:названиеПроекта>
+        <building-2:описаниеПроекта>Строительство жилого комплекса в северной части города.</building-2:описаниеПроекта>
+        <building-2:статусПроекта>Активный</building-2:статусПроекта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <building-2:имеетАрхитектора rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник3"/>
+        <building-2:датаЗавершенияПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-08-15</building-2:датаЗавершенияПроекта>
+        <building-2:датаНачалаПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-01</building-2:датаНачалаПроекта>
+        <building-2:названиеПроекта>Реконструкция школы №10</building-2:названиеПроекта>
+        <building-2:описаниеПроекта>Полный ремонт школьного здания.</building-2:описаниеПроекта>
+        <building-2:статусПроекта>Завершён</building-2:статусПроекта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <building-2:имеетИнженера rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник4"/>
+        <building-2:датаЗавершенияПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-09-30</building-2:датаЗавершенияПроекта>
+        <building-2:датаНачалаПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-05-01</building-2:датаНачалаПроекта>
+        <building-2:названиеПроекта>Строительство моста через реку</building-2:названиеПроекта>
+        <building-2:описаниеПроекта>Новый мост для соединения двух районов города.</building-2:описаниеПроекта>
+        <building-2:статусПроекта>Активный</building-2:статусПроекта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <building-2:датаЗавершенияПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-31</building-2:датаЗавершенияПроекта>
+        <building-2:датаНачалаПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-07-01</building-2:датаНачалаПроекта>
+        <building-2:названиеПроекта>Реконструкция больницы</building-2:названиеПроекта>
+        <building-2:описаниеПроекта>Капитальный ремонт здания больницы</building-2:описаниеПроекта>
+        <building-2:статусПроекта>В процессе</building-2:статусПроекта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Проект5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Проект5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект"/>
+        <building-2:имеетАрхитектора rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник5"/>
+        <building-2:датаЗавершенияПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-30</building-2:датаЗавершенияПроекта>
+        <building-2:датаНачалаПроекта rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-01</building-2:датаНачалаПроекта>
+        <building-2:названиеПроекта>Строительство офисного здания</building-2:названиеПроекта>
+        <building-2:описаниеПроекта>Новый офисный центр класса A</building-2:описаниеПроекта>
+        <building-2:статусПроекта>Запланирован</building-2:статусПроекта>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:работаетНадПроектом rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:ФИО>Иванов Иван Иванович</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-06-01</building-2:датаУстройства>
+        <building-2:должность>Прораб</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85000.0</building-2:зарплата>
+        <building-2:номерТелефона>+79001234567</building-2:номерТелефона>
+        <building-2:стаж rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</building-2:стаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:работаетНадПроектом rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:ФИО>Петров Петр Петрович</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-04-15</building-2:датаУстройства>
+        <building-2:должность>Инженер</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">78000.0</building-2:зарплата>
+        <building-2:номерТелефона>+79022345678</building-2:номерТелефона>
+        <building-2:стаж rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</building-2:стаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:работаетНадПроектом rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект2"/>
+        <building-2:ФИО>Сидоров Алексей Сергеевич</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-02-20</building-2:датаУстройства>
+        <building-2:должность>Архитектор</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">105000.0</building-2:зарплата>
+        <building-2:номерТелефона>+79033456789</building-2:номерТелефона>
+        <building-2:стаж rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</building-2:стаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:работаетНадПроектом rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект3"/>
+        <building-2:ФИО>Кузнецов Дмитрий Алексеевич</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-09-01</building-2:датаУстройства>
+        <building-2:должность>Мастер</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">65000.0</building-2:зарплата>
+        <building-2:номерТелефона>+79114567890</building-2:номерТелефона>
+        <building-2:стаж rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</building-2:стаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:работаетНадПроектом rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект5"/>
+        <building-2:ФИО>Смирнова Анна Владимировна</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-15</building-2:датаУстройства>
+        <building-2:должность>Менеджер проекта</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95000.0</building-2:зарплата>
+        <building-2:номерТелефона>+79211234567</building-2:номерТелефона>
+        <building-2:стаж rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</building-2:стаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота1">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <building-2:входитВПроект rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:датаНачалаРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-10</building-2:датаНачалаРаботы>
+        <building-2:типРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">Тяжёлое строительство</building-2:типРаботы>
+        <rdfs:label>Закладка фундамента</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота2">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <building-2:входитВПроект rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:датаЗавершенияРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-02-03</building-2:датаЗавершенияРаботы>
+        <building-2:датаНачалаРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-05</building-2:датаНачалаРаботы>
+        <building-2:статусРаботы>Завершена</building-2:статусРаботы>
+        <building-2:типРаботы>Ручная работа</building-2:типРаботы>
+        <rdfs:label>Монтаж стен</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота3 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота3">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <building-2:входитВПроект rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект1"/>
+        <building-2:датаНачалаРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-21</building-2:датаНачалаРаботы>
+        <building-2:статусРаботы>Активна</building-2:статусРаботы>
+        <building-2:типРаботы>Тяжелое строительство</building-2:типРаботы>
+        <rdfs:label>Укладка крыши</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота4 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота4">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <building-2:входитВПроект rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект3"/>
+        <building-2:датаЗавершенияРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-11</building-2:датаЗавершенияРаботы>
+        <building-2:датаНачалаРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-11</building-2:датаНачалаРаботы>
+        <building-2:статусРаботы>Прервана</building-2:статусРаботы>
+        <building-2:типРаботы>Ручная работа</building-2:типРаботы>
+        <rdfs:label>Укладка плитки</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5 -->
+
+    <owl:NamedIndividual rdf:about="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#СтроительнаяРабота"/>
+        <building-2:входитВПроект rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Проект2"/>
+        <building-2:датаНачалаРаботы rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-10</building-2:датаНачалаРаботы>
+        <building-2:статусРаботы>Не начата</building-2:статусРаботы>
+        <rdfs:label>Прокладка инженерных коммуникаций</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/ConstructionOntology#Сотрудник5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/ConstructionOntology#Сотрудник5">
+        <rdf:type rdf:resource="file:/home/korsnaike/studying/protege/building-2.rdf#Сотрудник"/>
+        <building-2:ФИО>Данилов Данил Данилович</building-2:ФИО>
+        <building-2:датаУстройства rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-11</building-2:датаУстройства>
+        <building-2:должность>Инженер</building-2:должность>
+        <building-2:зарплата rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.1442142E7</building-2:зарплата>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,172 @@
+//Выбрать сотрудников и проекты
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/projects/studing/protege/building-2.rdf#>
+SELECT ?employee ?project
+	WHERE { ?employee ont:работаетНадПроектом ?project }
+
+// Выбрать все затраты
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?затрата
+WHERE {
+  ?затрата rdf:type ont:Затрата .
+}
+
+// Получение дат начала всех строительных работ:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?работа ?дата
+WHERE {
+  ?работа ont:датаНачалаРаботы ?дата .
+}
+
+
+// Получение всех затрат и связанных с ними строительных работ:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?затрата ?работа
+WHERE {
+  ?затрата ont:связаныСРаботой ?работа .
+}
+
+// Получение сотрудников, работающих в проектах:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?сотрудник ?проект
+WHERE {
+  ?проект ont:имеетИнженера ?сотрудник .
+}
+
+
+// Получение всех проектов с их датами начала, строительными работами и затратами:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?проект ?датаНачала ?работа ?затрата
+WHERE {
+  ?проект ont:датаНачалаПроекта ?датаНачала .
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+}
+
+// Фильтрация по дате: получение строительных работ, начавшихся после 2024-01-01:
+
+SELECT ?работа ?дата
+WHERE {
+  ?работа ont:датаНачалаРаботы ?дата .
+  FILTER(?дата > "2024-01-01"^^xsd:date)
+}
+
+// Получение проектов с их затратами, связанными сотрудниками и типами строительных работ
+
+SELECT ?проект ?затрата ?сотрудник ?типРаботы
+WHERE {
+  ?проект rdf:type ont:Проект .
+  ?проект ont:имеетИнженера ?сотрудник .
+  ?затрата ont:связаныСРаботой ?работа .
+  ?работа ont:входитВПроект ?проект .
+  ?работа rdf:type ?типРаботы .
+}
+
+// Получение всех сотрудников, работающих в проектах с началом после определённой даты, и их ролей:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+SELECT ?сотрудник ?проект ?роль
+WHERE {
+  ?проект ont:датаНачалаПроекта ?дата .
+  ?проект ont:имеетИнженера ?сотрудник .
+  ?сотрудник ont:роль ?роль .
+  FILTER(?дата > "2023-01-01"^^xsd:date)
+}
+
+// Агрегация: суммарные затраты на строительные работы по каждому проекту:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+SELECT ?проект (SUM(?стоимость) AS ?суммарныеЗатраты)
+WHERE {
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+  ?затрата ont:суммаЗатраты ?стоимость .
+}
+GROUP BY ?проект
+
+
+// Получение проектов, в которых работают сотрудники с опытом более 5 лет
+
+SELECT DISTINCT ?проект
+WHERE {
+  ?сотрудник ont:стаж ?стаж .
+  ?сотрудник ont:работаетНадПроектом ?проект .
+  FILTER(?стаж > 5)
+}
+
+// Получение проектов с минимальной и максимальной стоимостью затрат для каждого проекта:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+SELECT ?проект (MIN(?стоимость) AS ?минимальнаяЗатрата) (MAX(?стоимость) AS ?максимальнаяЗатрата)
+WHERE {
+  ?проект rdf:type ont:Проект .
+  ?работа ont:входитВПроект ?проект .
+  ?затрата ont:связаныСРаботой ?работа .
+  ?затрата ont:суммаЗатраты ?стоимость .
+}
+GROUP BY ?проект
+
+// CONSTRUCT запрос
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ont: <file:/home/korsnaike/studying/protege/building-2.rdf#>
+
+CONSTRUCT {
+    ?оборудование ont:применяетсяВРаботе ?работа .
+    ?работа ont:входитВПроект ?проект
+}
+WHERE {
+    ?оборудование ont:применяетсяВРаботе ?работа .
+    ?работа ont:входитВПроект ?проект
+}
+
+// ASK запрос
+
+ASK {
+    ?работа ont:типРаботы 'Ручная работа'
+}
