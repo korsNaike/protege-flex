@@ -1,11 +1,5 @@
 # Запуск
 
 ```bash
-bash ./jena/fuseki-server
+cd jena && bash fuseki-server
 ```
-
-Затем в интерфейсе выбрать персистент и грузануть rdf
-
-Открыть index.html
-
-кайфануть с лютой онтологии

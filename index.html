@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ontology Query Interface</title>
+  <title>GUI для взаимодействия с онтологией строительства</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div class="app">
     <h1>GUI для взаимодействия с онтологией строительства</h1>
 
-    <!-- Поле для пользовательских запросов -->
     <div class="custom-query">
       <h2>Ввод собственного запроса</h2>
       <textarea id="customQueryInput" rows="10" placeholder="Ваш запрос"></textarea>
       <button onclick="runCustomQuery()">Запуск</button>
     </div>
 
-    <!-- Предустановленные запросы -->
     <div class="query-buttons">
       <button onclick="runQuery('maxMinProjects')">Проекты с их минимальной и максимальной стоимостью</button>
       <button onclick="runQuery('equipmentInProjects')">Получить оборудования, используемые в проекта (CONSTRUCT)</button>
@@ -26,10 +24,8 @@
       <button onclick="runQuery('projectsDates')">Работы, даты и затраты</button>
     </div>
 
-    <!-- Индикатор загрузки -->
     <div id="loading" style="display: none;">Loading...</div>
 
-    <!-- Вывод результатов -->
     <div id="results"></div>
   </div>
   <script src="index.js"></script>
